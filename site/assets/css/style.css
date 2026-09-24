@@ -731,6 +731,34 @@ html.intro-on .intro { background: radial-gradient(90% 90% at 50% 50%, #fff 0%, 
 /* Years number */
 .years__num { color: var(--pink); }
 
+/* Solid white header, always visible */
+.site-header, .site-header.is-scrolled, .site-header.menu-open {
+  background: #fff; color: var(--ink); transform: none !important;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  box-shadow: 0 1px 0 var(--candy);
+}
+.site-header.is-scrolled { box-shadow: 0 12px 30px -18px rgba(224, 33, 138, .45); }
+.site-header .brand__light { display: none; }
+
+/* Hero legibility: deeper plum shading behind the words */
+.hero::after {
+  background:
+    linear-gradient(90deg, rgba(58, 14, 39, .78) 0%, rgba(58, 14, 39, .45) 55%, rgba(58, 14, 39, .15) 100%),
+    linear-gradient(180deg, rgba(58, 14, 39, .25) 0%, rgba(58, 14, 39, .1) 40%, rgba(58, 14, 39, .85) 100%);
+}
+.page-hero::after {
+  background:
+    linear-gradient(90deg, rgba(58, 14, 39, .75) 0%, rgba(58, 14, 39, .4) 60%, rgba(58, 14, 39, .15) 100%),
+    linear-gradient(180deg, rgba(58, 14, 39, .2) 0%, rgba(58, 14, 39, .85) 100%);
+}
+.hero__media::after, .page-hero .hero__media::after { opacity: .3; }
+.hero__sub, .page-hero .lead, .hero .eyebrow, .page-hero .eyebrow, .crumbs { text-shadow: 0 1px 12px rgba(58, 14, 39, .6); }
+/* headline words sit in overflow masks, so a glow would be clipped into a box */
+.hero .display em, .page-hero .h1 em { text-shadow: none; }
+.hero__sub, .page-hero .lead { color: #fff; }
+.hero .eyebrow, .page-hero .eyebrow, .crumbs { color: #FFE3F1; }
+.btn--light { background: rgba(58, 14, 39, .35); }
+
 @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1) rotate(90deg); } }
 @keyframes blob { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-6vw, 4vh, 0) scale(1.15); } }
 

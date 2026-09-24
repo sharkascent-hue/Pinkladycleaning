@@ -269,7 +269,7 @@ function header(p, R) {
     ? `<li><button class="mm-toggle" type="button" aria-expanded="false" style="--i:${i++}">${n.label} ${ICON.plus}</button><div class="mm-sub"><ul><li><a href="${L(n.href)}">All services</a></li>${SERVICES.map((s) => `<li><a href="${R}${s.slug}">${s.name}</a></li>`).join('')}</ul></div></li>`
     : `<li><a href="${L(n.href)}" style="--i:${i++}">${n.label}</a></li>`).join('');
   return `
-<body${p.darkHero ? ' class="has-dark-hero"' : ''}>
+<body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="intro" aria-hidden="true">
   <div class="intro__logo">

@@ -130,13 +130,8 @@
     const vh = window.innerHeight;
     const docH = document.documentElement.scrollHeight - vh;
 
-    if (header && !html.classList.contains('menu-lock')) {
-      header.classList.toggle('is-scrolled', y > 40);
-      const goingDown = y > lastY + 4;
-      const goingUp = y < lastY - 4;
-      if (goingDown && y > vh * 0.6) header.classList.add('is-hidden');
-      else if (goingUp || y < 120) header.classList.remove('is-hidden');
-    }
+    // Header stays solid white and always visible; it just gains a soft shadow once scrolled
+    if (header) header.classList.toggle('is-scrolled', y > 10);
     if (progress) progress.style.transform = `scaleX(${docH > 0 ? Math.min(1, y / docH) : 0})`;
 
     if (actionBar) {
@@ -187,7 +182,6 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     mobileMenu.setAttribute('aria-hidden', String(!open));
-    if (open) header.classList.remove('is-hidden');
   };
   if (burger && mobileMenu) {
     burger.addEventListener('click', () => setMenu(!header.classList.contains('menu-open')));
