@@ -13,7 +13,7 @@ Every item here has a matching `<!-- TODO: confirm with client -->` in the page 
 ## Services
 7. Anything beyond cleaning: laundry & ironing, linen change, fridge/oven, windows (interior only?), wardrobe organising, pre-arrival home prep?
 8. Is there a minimum booking or typical property size?
-13. Keep Office Cleaning and End of Tenancy on the site, or drop them to stay premium? (Both are currently kept. Office is shown as "Also available".)
+13. ~~Office cleaning~~: removed at the client's request. The new Luxury Cleaning section (Mansion & Estate, Penthouse & Apartment, Period Home) takes its place. Please check that the wording on those three pages matches how you work.
 
 ## Content & contact
 9. Real photos of homes you've cleaned (with permission), or can Angelo shoot some? See `IMAGES_TODO.md`.
@@ -22,8 +22,9 @@ Every item here has a matching `<!-- TODO: confirm with client -->` in the page 
 12. Is Margaret's mobile the main line, and is **WhatsApp OK on 086 165 5300**? (The mobile quick-contact bar and Contact page link to WhatsApp on this number.)
 14. Areas outside the current list? Suggested: Howth, Sutton, Dalkey, Killiney, Foxrock, Donnybrook, Castleknock, Portmarnock, Wicklow/Kildare estates.
 15. More Google reviews: the only one captured is Aine Pitt's. Please send the full list, or permission to pull them from the Google profile. (The carousel adds arrows automatically once there are two or more.)
-16. Typical quote response time (e.g. "within 24 hours") for the Quote page.
+16. The quote form now asks the same questions as the old site (address, bedrooms, bathrooms, ensuites, guest toilets, size, cleaning type). Anything to add or remove?
+17. Typical quote response time (e.g. "within 24 hours") for the Quote page.
 
 ## Legal / setup
-17. Review the Privacy Policy and Terms (plain-English starting points, not legal advice): retention periods, cancellation notice, payment terms, liability wording.
-18. Create a free Web3Forms access key for info@pinklady.ie and paste it into both forms (`YOUR_WEB3FORMS_ACCESS_KEY` in `build.mjs`), then rebuild. Until then the forms show a polite "please call Margaret" message.
+18. Review the Privacy Policy and Terms (plain-English starting points, not legal advice): retention periods, cancellation notice, payment terms, liability wording.
+19. Create a free Web3Forms access key for info@pinklady.ie and paste it into both forms (`YOUR_WEB3FORMS_ACCESS_KEY` in `build.mjs`), then rebuild. Until then the forms show a polite "please call Margaret" message.

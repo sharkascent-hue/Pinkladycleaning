@@ -226,11 +226,20 @@
 
   /* ---------- Quote / contact form ---------- */
   $$('form[data-ajax]').forEach((form) => {
+    // Simple maths check against bots: new numbers on every visit
+    const cap = $('[data-captcha]', form);
+    if (cap) {
+      const a = 2 + Math.floor(Math.random() * 8), b = 2 + Math.floor(Math.random() * 8);
+      $('[data-captcha-q]', form).textContent = `${a} + ${b}`;
+      cap.dataset.answer = a + b;
+      cap.addEventListener('input', () => cap.setCustomValidity(''));
+    }
     const card = form.closest('.form-card');
     const status = $('.form__status', form);
     const btn = $('button[type="submit"]', form);
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (cap) cap.setCustomValidity(cap.value.trim() === cap.dataset.answer ? '' : 'Please check the sum and try again.');
       if (!form.checkValidity()) { form.reportValidity(); return; }
       const key = form.querySelector('[name="access_key"]');
       btn.classList.add('is-loading');
@@ -238,9 +247,10 @@
       status.classList.remove('is-error');
       try {
         // Combine multi-select services into one readable field
-        const data = new FormData(form);
-        const services = data.getAll('service');
-        if (services.length) { data.delete('service'); data.append('services', services.join(', ')); }
+        const raw = new FormData(form);
+        const data = new FormData();
+        // One readable line per field, even for multi-select checkboxes; the maths check is not sent
+        for (const k of new Set(raw.keys())) if (k !== 'captcha') data.append(k, raw.getAll(k).join(', '));
         const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
         const json = await res.json().catch(() => ({}));
         if (!res.ok || json.success === false) throw new Error(json.message || 'Request failed');

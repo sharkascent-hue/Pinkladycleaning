@@ -759,6 +759,29 @@ html.intro-on .intro { background: radial-gradient(90% 90% at 50% 50%, #fff 0%, 
 .hero .eyebrow, .page-hero .eyebrow, .crumbs { color: #FFE3F1; }
 .btn--light { background: rgba(58, 14, 39, .35); }
 
+/* Home hero with the brand ribbons artwork: keep it bright, shade only behind the words */
+.hero--art .hero__media .media { inset: 0; }
+/* the artwork is a composed graphic: show all of it, no slow zoom */
+.hero--art .hero__media img { object-position: 100% 70%; animation: none; }
+html.js .hero--art .hero__media .media { transform: scale(1.06); }
+html.js.is-loaded .hero--art .hero__media .media { transform: scale(1); }
+.hero--art .hero__media::after { display: none; }
+.hero--art::after {
+  background:
+    linear-gradient(90deg, rgba(160, 20, 95, .55) 0%, rgba(160, 20, 95, .25) 45%, rgba(160, 20, 95, 0) 70%),
+    linear-gradient(180deg, rgba(58, 14, 39, 0) 55%, rgba(58, 14, 39, .55) 100%);
+}
+.hero--art .glow span { opacity: .22; }
+@media (max-width: 899px) {
+  .hero--art .hero__media img { object-position: 38% 50%; }
+  .hero--art::after { background: linear-gradient(180deg, rgba(160, 20, 95, .15) 0%, rgba(120, 15, 70, .45) 45%, rgba(58, 14, 39, .8) 100%); }
+}
+
+/* Quote form extras */
+.captcha { max-width: 280px; }
+.form__note { font-size: .95rem; color: var(--muted); margin: 0; }
+.form__note a { color: var(--pink-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
 @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(.4) rotate(0deg); } 50% { opacity: 1; transform: scale(1) rotate(90deg); } }
 @keyframes blob { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-6vw, 4vh, 0) scale(1.15); } }
 

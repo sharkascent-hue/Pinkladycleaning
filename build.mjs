@@ -43,7 +43,6 @@ const IMG = {
   lounge:    { id: '1616486338812-3dadae4b4ace', alt: 'Sunlit lounge with soft upholstery' },
   sofa:      { id: '1586023492125-27b2c045efd7', alt: 'Upholstered sofa and rug in a light-filled room' },
   empty:     { id: '1600566753086-00f18fb6b3ea', alt: 'Newly finished interior, clean and ready to live in' },
-  office:    { id: '1497366216548-37526070297c', alt: 'Clean, bright modern office' },
   stair:     { id: '1600047509807-ba8f99d2cdde', alt: 'Light-filled hallway and staircase in a large home' },
 };
 const unsplash = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
@@ -184,22 +183,63 @@ const SERVICES = [
     tagsTitle: 'Finishing',
     tags: ['Fresh and hygienic', 'Fast drying', 'Final quality check'],
   },
+];
+
+
+/* ---------------------------------------------------------------------------
+   Luxury Cleaning — its own section with three pages
+--------------------------------------------------------------------------- */
+const LUXURY = [
   {
-    slug: 'office-cleaning-dublin/', name: 'Office & Commercial', short: 'Professional cleaning scheduled around your working hours.', img: 'office', img2: 'living', minor: true,
-    title: 'Office Cleaning Dublin | Commercial Cleaning | Pink Lady',
-    desc: 'Office and commercial cleaning in Dublin, scheduled around your working hours. Family-run since 2006.',
-    h1: 'Office Cleaning <em>in Dublin</em>',
-    lead: 'Professional cleaning for offices and commercial spaces, scheduled around your working hours.',
-    overviewTitle: 'Working to <em>your schedule</em>',
+    slug: 'mansion-estate-cleaning/', name: 'Mansion & Estate Cleaning', short: 'Meticulous care for large private residences, room by room and floor by floor.', img: 'villa', img2: 'stair',
+    title: 'Mansion & Estate Cleaning Dublin | Pink Lady',
+    desc: 'Discreet, meticulous cleaning for mansions and large private estates in Dublin. Tailored checklists, a vetted team and care for fine finishes. Family-run since 2006.',
+    h1: 'Mansion &amp; Estate <em>Cleaning</em>',
+    lead: 'Large private residences deserve a plan as considered as the home itself.',
+    overviewTitle: 'Every room, <em>every floor</em>',
     body: [
-      'We have cared for a handful of corporate clients since we began in 2006, and bring the same attention to detail to offices that we bring to private homes.',
-      'Cleaning is planned around your working hours and follows a structured checklist agreed with you.',
-      'You deal directly with our team, and we arrive with all professional products and equipment.',
+      'A large home has its own rhythm: reception rooms, guest suites, staircases and hallways that each need attention. We begin by talking through your home with you and building a checklist around it, so nothing is overlooked.',
+      'Our team works quietly and respectfully around your household, and every Pink Lady cleaner goes through a rigorous vetting process.',
+      'We bring all our own professional products and equipment, including an industrial steam cleaner where appropriate, and every clean finishes with a quality check against your checklist.',
     ],
-    listTitle: 'Includes',
-    list: ['Desks and reachable surfaces', 'Kitchens and staff areas', 'Washrooms', 'Floors vacuumed and washed', 'Glass and mirrors', 'Light switches and door handles'],
-    tagsTitle: 'Scheduling',
-    tags: ['Before or after hours', 'Regular contracts', 'One-off deep cleans'],
+    listTitle: 'We look after',
+    list: ['Reception rooms and formal living spaces', 'Guest suites and principal bedrooms', 'Staircases, landings and hallways', 'Kitchens, pantries and utility rooms', 'Bathrooms and en-suites', 'Fine finishes and designer fixtures <!-- TODO: confirm with client which surfaces (CLIENT_QUESTIONS.md #5) -->'],
+    tagsTitle: 'Available as',
+    tags: ['Regular housekeeping', 'One-off deep clean', 'Before and after events'],
+  },
+  {
+    slug: 'penthouse-cleaning/', name: 'Penthouse & Apartment Cleaning', short: 'Immaculate glass, stone and designer interiors, cared for discreetly.', img: 'interior', img2: 'kitchen',
+    title: 'Penthouse & Luxury Apartment Cleaning Dublin | Pink Lady',
+    desc: 'Cleaning for penthouses and luxury apartments in Dublin. Glass, stone, high-gloss and designer kitchens cared for by a vetted, family-run team since 2006.',
+    h1: 'Penthouse &amp; Apartment <em>Cleaning</em>',
+    lead: 'Light-filled, design-led homes where every surface is on show.',
+    overviewTitle: 'Where every detail <em>shows</em>',
+    body: [
+      'Penthouses and luxury apartments are designed to be seen: expanses of glass, polished stone, high-gloss joinery and statement kitchens. Every surface needs the right approach.',
+      'We plan each clean around your home and your schedule, working from a structured checklist that we adjust whenever your needs change.',
+      'You deal directly with our family-run team, never a call centre, and we arrive fully equipped with professional products and equipment.',
+    ],
+    listTitle: 'We attend to',
+    list: ['Interior glass, mirrors and balustrades <!-- TODO: confirm with client — interior windows only? (CLIENT_QUESTIONS.md #7) -->', 'Marble, stone and high-gloss surfaces', 'Designer kitchens and appliance exteriors', 'Bathrooms and en-suites', 'Floors vacuumed and washed', 'Light switches, handles and fixtures'],
+    tagsTitle: 'Scheduled to suit you',
+    tags: ['Weekly', 'Fortnightly', 'One-off'],
+  },
+  {
+    slug: 'period-home-cleaning/', name: 'Period Home Cleaning', short: 'Gentle, considered care for original features and character homes.', img: 'lounge', img2: 'dining',
+    title: 'Period Home Cleaning Dublin | Georgian & Victorian Homes | Pink Lady',
+    desc: 'Careful cleaning for Dublin period homes, from Georgian to Victorian. Original features, hardwood floors and fine finishes looked after by a vetted, family-run team.',
+    h1: 'Period Home <em>Cleaning</em>',
+    lead: 'Character homes with original features, treated with the care they deserve.',
+    overviewTitle: 'Care for <em>character</em>',
+    body: [
+      'Dublin’s Georgian and Victorian homes combine original features with modern living. Cornicing, fireplaces, sash windows and hardwood floors all need a considered approach.',
+      'Before the first visit we discuss your home, its finishes and anything needing special attention, and build that into a tailored checklist.',
+      'Our experienced, vetted team uses professional products and equipment suited to each surface.',
+    ],
+    listTitle: 'We take care of',
+    list: ['Original fireplaces and mantelpieces', 'Cornicing, skirting and architraves', 'Hardwood and period floors', 'Sash window sills and interior frames', 'Kitchens and bathrooms', 'Antiques and delicate pieces <!-- TODO: confirm with client (CLIENT_QUESTIONS.md #5) -->'],
+    tagsTitle: 'Ideal for',
+    tags: ['Georgian homes', 'Victorian and Edwardian houses', 'Restored period properties'],
   },
 ];
 
@@ -208,7 +248,8 @@ const SERVICES = [
 --------------------------------------------------------------------------- */
 const NAV = [
   { href: '', label: 'Home' },
-  { href: 'services/', label: 'Services', sub: true },
+  { href: 'services/', label: 'Services', sub: 'services' },
+  { href: 'luxury-cleaning/', label: 'Luxury Cleaning', sub: 'luxury' },
   { href: 'our-story/', label: 'Our Story' },
   { href: 'areas-we-serve/', label: 'Areas' },
   { href: 'reviews/', label: 'Reviews' },
@@ -259,14 +300,15 @@ ${p.noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="icon" h
 
 function header(p, R) {
   const L = (h) => R + h || './';
-  const cur = (h) => (p.path === h || (h && p.path.startsWith(h)) || (h === 'services/' && p.isService) ? ' aria-current="page"' : '');
-  const serviceLinks = SERVICES.map((s) => `<li><a href="${R}${s.slug}">${s.name}<span>→</span></a></li>`).join('');
+  const cur = (n) => (p.path === n.href || p.group === n.sub ? ' aria-current="page"' : '');
+  const SUBS = { services: { list: SERVICES, all: 'All services' }, luxury: { list: LUXURY, all: 'All luxury cleaning' } };
+  const subLinks = (k) => SUBS[k].list.map((s) => `<li><a href="${R}${s.slug}">${s.name}<span>→</span></a></li>`).join('');
   const desktop = NAV.map((n) => n.sub
-    ? `<li class="has-sub"><a class="menu__link" href="${L(n.href)}"${cur(n.href)}>${n.label} ${ICON.chevron}</a><ul class="submenu" role="list">${serviceLinks}</ul></li>`
+    ? `<li class="has-sub"><a class="menu__link" href="${L(n.href)}"${cur(n)}>${n.label} ${ICON.chevron}</a><ul class="submenu" role="list">${subLinks(n.sub)}</ul></li>`
     : `<li><a class="menu__link" href="${L(n.href)}"${p.path === n.href ? ' aria-current="page"' : ''}>${n.label}</a></li>`).join('');
   let i = 0;
   const mobile = NAV.map((n) => n.sub
-    ? `<li><button class="mm-toggle" type="button" aria-expanded="false" style="--i:${i++}">${n.label} ${ICON.plus}</button><div class="mm-sub"><ul><li><a href="${L(n.href)}">All services</a></li>${SERVICES.map((s) => `<li><a href="${R}${s.slug}">${s.name}</a></li>`).join('')}</ul></div></li>`
+    ? `<li><button class="mm-toggle" type="button" aria-expanded="false" style="--i:${i++}">${n.label} ${ICON.plus}</button><div class="mm-sub"><ul><li><a href="${L(n.href)}">${SUBS[n.sub].all}</a></li>${SUBS[n.sub].list.map((s) => `<li><a href="${R}${s.slug}">${s.name}</a></li>`).join('')}</ul></div></li>`
     : `<li><a href="${L(n.href)}" style="--i:${i++}">${n.label}</a></li>`).join('');
   return `
 <body>
@@ -326,6 +368,8 @@ function footer(R) {
       <div>
         <h2>Services</h2>
         <ul>${SERVICES.map((s) => `<li><a href="${R}${s.slug}">${s.name}</a></li>`).join('')}</ul>
+        <h2 style="margin-top:32px">Luxury Cleaning</h2>
+        <ul>${LUXURY.map((s) => `<li><a href="${R}${s.slug}">${s.name}</a></li>`).join('')}</ul>
       </div>
       <div>
         <h2>Pink Lady</h2>
@@ -391,7 +435,7 @@ function orgSchema() {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Cleaning services',
-      itemListElement: SERVICES.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, serviceType: 'Cleaning service', url: SITE_URL + s.slug } })),
+      itemListElement: [...SERVICES, ...LUXURY].map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, serviceType: 'Cleaning service', url: SITE_URL + s.slug } })),
     },
   };
 }
@@ -531,8 +575,9 @@ pages.push({
   title: 'Luxury Home Cleaning Dublin | Pink Lady Cleaning Since 2006',
   desc: 'Discreet, meticulous cleaning for Dublin’s finest homes. Family-run since 2006, with a vetted, experienced team and tailored cleaning checklists.',
   body: (p, R) => `
-<section class="hero">
-  <div class="hero__media" data-parallax="0.25"><div class="media">${img('hero', { eager: true })}</div></div>
+<section class="hero hero--art">
+  <!-- Hero artwork: Pink Lady ribbons graphic (from the client's existing brand imagery) -->
+  <div class="hero__media" data-parallax="0.25"><div class="media"><picture><source srcset="${R}assets/img/hero-ribbons.webp" type="image/webp"><img src="${R}assets/img/hero-ribbons.jpg" alt="Pink Lady brand artwork: flowing pink, mint and orange ribbons beside a lady in a polka-dot dress and pink heels" width="1079" height="799" fetchpriority="high"></picture></div></div>
   ${glow()}${sparkles(22, 7)}
   <div class="container hero__inner">
     <p class="eyebrow" data-reveal="fade" style="--d:100">Family-run · Dublin · Since 2006</p>
@@ -588,7 +633,20 @@ pages.push({
       </div>
       <div data-reveal style="--d:200"><p class="lead" style="margin-bottom:20px">Regular housekeeping, one-off deep cleans and specialist care, each tailored to your property.</p><a class="link-arrow" href="${R}services/">All services ${ICON.next}</a></div>
     </div>
-    ${serviceCards(SERVICES.filter((s) => !s.minor), R)}
+    ${serviceCards(SERVICES, R)}
+  </div>
+</section>
+
+<section class="section section--blush">
+  <div class="container">
+    <div class="grid-2 grid-2--wide-left" style="align-items:end;margin-bottom:clamp(48px,6vw,80px)">
+      <div>
+        <p class="eyebrow" data-reveal="fade">Luxury Cleaning</p>
+        <h2 class="h2" data-split style="margin:0">For Dublin’s most <em>exceptional</em> homes</h2>
+      </div>
+      <div data-reveal style="--d:200"><p class="lead" style="margin-bottom:20px">Dedicated care for mansions and estates, penthouses and period homes.</p><a class="link-arrow" href="${R}luxury-cleaning/">Explore luxury cleaning ${ICON.next}</a></div>
+    </div>
+    ${serviceCards(LUXURY, R)}
   </div>
 </section>
 
@@ -635,24 +693,24 @@ ${ctaBand(R)}`,
 pages.push({
   path: 'services/', darkHero: true, crumbs: [{ name: 'Services', path: 'services/' }],
   title: 'Cleaning Services Dublin | Luxury, Deep & Specialist Cleaning | Pink Lady',
-  desc: 'Luxury home cleaning, deep cleaning, event, move-in/move-out, after builders, carpet and office cleaning across Dublin. Family-run since 2006.',
+  desc: 'Luxury home cleaning, deep cleaning, event, move-in/move-out, after builders and carpet cleaning across Dublin, plus specialist care for mansions, penthouses and period homes.',
   body: (p, R) => `
 ${pageHero(p, R, { eyebrow: 'Our Services', title: 'Care for every part <em>of your home</em>', lead: 'From regular housekeeping to one-off deep cleans and specialist care, every service is tailored to your property.', image: 'dining' })}
 <section class="section">
   <div class="container">
     ${sectionHead({ eyebrow: 'For your home', title: 'Residential <em>services</em>', lead: 'Each service begins with a conversation about your home and follows a checklist built around it.' })}
-    ${serviceCards(SERVICES.filter((s) => !s.minor), R)}
+    ${serviceCards(SERVICES, R)}
   </div>
 </section>
 <section class="section section--ivory2 section--tight">
   <div class="container grid-2">
     <div>
-      <p class="eyebrow" data-reveal="fade">Also available</p>
-      <h2 class="h2" data-split>Office &amp; <em>commercial</em></h2>
-      <p class="lead" data-reveal>Professional cleaning for offices and commercial spaces, scheduled around your working hours.</p>
-      <a class="link-arrow" href="${R}office-cleaning-dublin/" data-reveal>Office cleaning ${ICON.next}</a>
+      <p class="eyebrow" data-reveal="fade">Luxury Cleaning</p>
+      <h2 class="h2" data-split>For <em>exceptional</em> homes</h2>
+      <p class="lead" data-reveal>Dedicated care for mansions and estates, penthouses and period homes.</p>
+      <a class="link-arrow" href="${R}luxury-cleaning/" data-reveal>Explore luxury cleaning ${ICON.next}</a>
     </div>
-    <div class="media ratio-land" data-reveal="clip">${img('office', { sizes: '(min-width:900px) 45vw, 100vw', widths: [600, 900, 1300] })}</div>
+    <div class="media ratio-land" data-reveal="clip">${img('villa', { sizes: '(min-width:900px) 45vw, 100vw', widths: [600, 900, 1300] })}</div>
   </div>
 </section>
 ${standard({ compact: true })}
@@ -660,11 +718,16 @@ ${ctaBand(R)}`,
 });
 
 // ---------- Service pages ----------
-SERVICES.forEach((s) => {
-  const others = SERVICES.filter((o) => o !== s && !o.minor).slice(0, 3);
+const GROUPS = [
+  { key: 'services', list: SERVICES, name: 'Services', path: 'services/' },
+  { key: 'luxury', list: LUXURY, name: 'Luxury Cleaning', path: 'luxury-cleaning/' },
+];
+GROUPS.forEach((g) => g.list.forEach((s) => {
+  // Suggest siblings first, then fill up to three from the other group
+  const others = [...g.list, ...(g.key === 'luxury' ? SERVICES : LUXURY)].filter((o) => o !== s).slice(0, 3);
   pages.push({
-    path: s.slug, darkHero: true, isService: true, title: s.title, desc: s.desc,
-    crumbs: [{ name: 'Services', path: 'services/' }, { name: s.name, path: s.slug }],
+    path: s.slug, darkHero: true, isService: true, group: g.key, title: s.title, desc: s.desc,
+    crumbs: [{ name: g.name, path: g.path }, { name: s.name, path: s.slug }],
     schema: [serviceSchema(s)],
     body: (p, R) => `
 ${pageHero(p, R, { eyebrow: s.name, title: s.h1, lead: s.lead, image: s.img })}
@@ -703,6 +766,23 @@ ${standard({ compact: true })}
 </section>
 ${ctaBand(R, { image: s.img2 })}`,
   });
+}));
+
+// ---------- Luxury cleaning hub ----------
+pages.push({
+  path: 'luxury-cleaning/', darkHero: true, group: 'luxury', crumbs: [{ name: 'Luxury Cleaning', path: 'luxury-cleaning/' }],
+  title: 'Luxury Cleaning Dublin | Mansions, Penthouses & Period Homes | Pink Lady',
+  desc: 'Luxury cleaning for Dublin’s finest homes: mansions and estates, penthouses and luxury apartments, and period homes. Discreet, vetted and family-run since 2006.',
+  body: (p, R) => `
+${pageHero(p, R, { eyebrow: 'Luxury Cleaning', title: 'Luxury cleaning for <em>exceptional</em> homes', lead: 'Mansions, penthouses and period residences, each cared for with a plan built around it.', image: 'villa' })}
+<section class="section">
+  <div class="container">
+    ${sectionHead({ eyebrow: 'Our luxury services', title: 'Three homes, <em>three approaches</em>', lead: 'Every high-value home is different. Choose the care that fits yours.' })}
+    ${serviceCards(LUXURY, R)}
+  </div>
+</section>
+${standard({ blush: true, compact: true })}
+${ctaBand(R)}`,
 });
 
 // ---------- Our story ----------
@@ -804,26 +884,32 @@ const quoteForm = (R) => `
     <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="form__row form__row--2">
       <div class="field"><label for="q-name">Name <span class="req">*</span></label><input id="q-name" name="name" autocomplete="name" required><span class="field__line"></span></div>
-      <div class="field"><label for="q-phone">Phone <span class="req">*</span></label><input id="q-phone" name="phone" type="tel" autocomplete="tel" required><span class="field__line"></span></div>
+      <div class="field"><label for="q-address">Address <span class="req">*</span></label><input id="q-address" name="address" autocomplete="street-address" required><span class="field__line"></span></div>
     </div>
-    <div class="field"><label for="q-email">Email <span class="req">*</span></label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="field__line"></span></div>
     <div class="form__row form__row--2">
-      <div class="field"><label for="q-type">Property type</label>
-        <select id="q-type" name="property_type"><option value="">Please select</option><option>House</option><option>Penthouse</option><option>Apartment</option><option>Estate</option><option>Office</option></select><span class="field__line"></span></div>
-      <div class="field"><label for="q-size">Approx. size</label><input id="q-size" name="size" placeholder="e.g. 5 bedrooms or 4,000 sq ft"><span class="field__line"></span></div>
+      <div class="field"><label for="q-phone">Mobile number <span class="req">*</span></label><input id="q-phone" name="mobile" type="tel" autocomplete="tel" required><span class="field__line"></span></div>
+      <div class="field"><label for="q-email">Email address <span class="req">*</span></label><input id="q-email" name="email" type="email" autocomplete="email" required><span class="field__line"></span></div>
     </div>
-    <div class="field"><label for="q-area">Area</label><input id="q-area" name="area" list="areas" autocomplete="address-level2" placeholder="e.g. Ballsbridge"><datalist id="areas">${AREAS.map((a) => `<option value="${a}">`).join('')}</datalist><span class="field__line"></span></div>
-    <fieldset class="field"><legend>Service needed</legend>
-      <div class="chips">${SERVICES.map((s) => `<label class="chip"><input type="checkbox" name="service" value="${s.name}"><span>${s.name}</span></label>`).join('')}</div>
+    <div class="form__row form__row--2">
+      <div class="field"><label for="q-type">Type of property</label><select id="q-type" name="property_type"><option value="">Type of property</option><option>House</option><option>Apartment</option><option>Penthouse</option><option>Mansion / Estate</option><option>Period home</option><option>Bungalow</option><option>Other</option></select><span class="field__line"></span></div>
+      <div class="field"><label for="q-beds">How many bedrooms</label><select id="q-beds" name="bedrooms"><option value="">How many bedrooms</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10+</option></select><span class="field__line"></span></div>
+    </div>
+    <div class="form__row form__row--2">
+      <div class="field"><label for="q-baths">How many bathrooms</label><select id="q-baths" name="bathrooms"><option value="">How many bathrooms</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select><span class="field__line"></span></div>
+      <div class="field"><label for="q-ensuites">How many ensuites</label><select id="q-ensuites" name="ensuites"><option value="">How many ensuites</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select><span class="field__line"></span></div>
+    </div>
+    <div class="form__row form__row--2">
+      <div class="field"><label for="q-toilet">Guest toilet (single)</label><select id="q-toilet" name="guest_toilets"><option value="">Guest toilet (single)</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select><span class="field__line"></span></div>
+      <div class="field"><label for="q-size">Size of property (approx. sq ft)</label><input id="q-size" name="size_sq_ft" inputmode="numeric" placeholder="e.g. 3,500"><span class="field__line"></span></div>
+    </div>
+    <fieldset class="field"><legend>Please select the type of cleaning you require</legend>
+      <div class="chips"><label class="chip"><input type="checkbox" name="cleaning_type" value="Spring clean"><span>Spring clean</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="End of tenancy clean"><span>End of tenancy clean</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Property for sale"><span>Property for sale</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Moving in clean"><span>Moving in clean</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Second-hand purchase"><span>Second-hand purchase</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Builders clean"><span>Builders clean</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Newly built house clean"><span>Newly built house clean</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Refurbishment"><span>Refurbishment</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Carpet cleaning"><span>Carpet cleaning</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Upholstery cleaning"><span>Upholstery cleaning</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Luxury home cleaning"><span>Luxury home cleaning</span></label><label class="chip"><input type="checkbox" name="cleaning_type" value="Other"><span>Other</span></label></div>
     </fieldset>
-    <fieldset class="field"><legend>One-off or regular</legend>
-      <div class="chips">${['One-off', 'Regular', 'Not sure yet'].map((o) => `<label class="chip"><input type="radio" name="frequency" value="${o}"><span>${o}</span></label>`).join('')}</div>
-    </fieldset>
-    <div class="field" style="max-width:320px"><label for="q-date">Preferred date</label><input id="q-date" name="preferred_date" type="date"><span class="field__line"></span></div>
-    <div class="field"><label for="q-msg">Message</label><textarea id="q-msg" name="message" placeholder="Anything we should know about your home, its finishes or access"></textarea><span class="field__line"></span></div>
+    <div class="field captcha"><label for="q-sum">Quick check: <span data-captcha-q>9 + 7</span> = <span class="req">*</span></label><input id="q-sum" name="captcha" inputmode="numeric" autocomplete="off" required data-captcha data-answer="16"><span class="field__line"></span></div>
     <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I agree to Pink Lady contacting me about this enquiry and to my details being handled as described in the <a href="${R}privacy-policy/">Privacy Policy</a>. <span class="req">*</span></span></label>
-    <div><button class="btn" type="submit">Send my request ${ICON.arrow}</button></div>
+    <div><button class="btn" type="submit">Submit ${ICON.arrow}</button></div>
     <p class="form__status" role="status" aria-live="polite"></p>
+    <p class="form__note">If you would prefer to chat with Margaret in person, please ring <a href="tel:${BIZ.phoneIntl}">${BIZ.phone}</a> (from abroad ${BIZ.phoneDisplayIntl}).</p>
   </form>
   <div class="form-success" role="status">
     <svg viewBox="0 0 72 72" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="36" cy="36" r="30"/><path d="m24 37 8 8 16-17"/></svg>
@@ -929,7 +1015,7 @@ legal('privacy-policy/', 'Privacy Policy', 'Privacy Policy | Pink Lady Cleaning'
 <h2>Who we are</h2>
 <p>${BIZ.legal}, ${BIZ.street}, ${BIZ.locality}, ${BIZ.region}, ${BIZ.country}. You can contact us about your data at <a href="mailto:${BIZ.email}">${BIZ.email}</a> or on ${BIZ.phone}.</p>
 <h2>What we collect</h2>
-<p>When you request a quote or send us a message, we collect the details you choose to give us: your name, email address, phone number, information about your property (type, approximate size and area), the services you are interested in, your preferred date and any message you include.</p>
+<p>When you request a quote or send us a message, we collect the details you choose to give us: your name, address, email address and mobile number, information about your property (type, number of bedrooms, bathrooms, ensuites and guest toilets, and approximate size), the type of cleaning you need and any message you include.</p>
 <p>When you become a client, we may also hold your address, access instructions and invoicing details so we can provide our service.</p>
 <h2>How we use it</h2>
 <ul>

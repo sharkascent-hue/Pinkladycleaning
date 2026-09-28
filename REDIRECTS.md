@@ -10,7 +10,6 @@ The new site **keeps the old page names as URLs wherever it can**, so most exist
 | `/` | Home |
 | `/one-off-cleaning/` | Deep Cleaning (one-off) |
 | `/carpet-cleaning/` | Carpets, Rugs & Upholstery |
-| `/office-cleaning-dublin/` | Office & Commercial |
 | `/end-of-tenancy-cleaning/` | Move-In / Move-Out (keeps the "end of tenancy" keyword) |
 | `/after-builders-cleaning/` | After Builders & Renovation |
 | `/our-story/` | Our Story / About |
@@ -19,11 +18,12 @@ The new site **keeps the old page names as URLs wherever it can**, so most exist
 | `/privacy-policy/` | Privacy Policy |
 
 ## New pages
-`/services/`, `/luxury-home-cleaning/`, `/event-cleaning/`, `/areas-we-serve/`, `/reviews/`, `/terms/`
+`/services/`, `/luxury-home-cleaning/`, `/event-cleaning/`, `/luxury-cleaning/`, `/mansion-estate-cleaning/`, `/penthouse-cleaning/`, `/period-home-cleaning/`, `/areas-we-serve/`, `/reviews/`, `/terms/`
 
 ## 301 redirects to add
 | Old URL (verify) | Redirect to |
 |---|---|
+| `/office-cleaning-dublin/` (office cleaning has been dropped) | `/services/` |
 | `/why-us/` | `/our-story/` |
 | `/our-services/` | `/services/` |
 | `/terms-of-service/` (or whatever the old terms slug is) | `/terms/` |
@@ -33,6 +33,7 @@ The new site **keeps the old page names as URLs wherever it can**, so most exist
 
 ### Netlify (`site/_redirects`)
 ```
+/office-cleaning-dublin/  /services/  301
 /why-us/            /our-story/   301
 /our-services/      /services/    301
 /terms-of-service/  /terms/       301
@@ -40,6 +41,7 @@ The new site **keeps the old page names as URLs wherever it can**, so most exist
 
 ### Apache (`.htaccess`)
 ```
+Redirect 301 /office-cleaning-dublin/ /services/
 Redirect 301 /why-us/ /our-story/
 Redirect 301 /our-services/ /services/
 Redirect 301 /terms-of-service/ /terms/

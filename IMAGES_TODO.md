@@ -23,11 +23,11 @@ Brief: bright, airy luxury interiors (marble, big windows, staircases, penthouse
 | `interior` | 1618221195710-dd6b41faaea6 | After Builders card/hero, Home "Discretion" section | Newly renovated interior |
 | `kitchen2` | 1556912173-3bb406ef7e77 | After Builders detail | Kitchen detail |
 | `sofa` | 1586023492125-27b2c045efd7 | Carpets & Upholstery card/hero | Sofa and rug close-up |
-| `office` | 1497366216548-37526070297c | Office card/hero, Services "Also available" | Clean office |
 | `exterior` | 1600585154340-be6161a56a0c | Areas hero | Exterior of a large Dublin home |
-| `villa` | 1613490493576-7fde63acd811 | "Let's talk" CTA band (most pages) | Exterior of a large residence |
+| `villa` | 1613490493576-7fde63acd811 | CTA band, Luxury Cleaning hub, Mansion & Estate page, Services "Luxury" block | Exterior of a large residence |
 
 Also:
+- **Home hero artwork:** `site/assets/img/hero-ribbons.webp/.jpg` is the ribbons-and-lady graphic from the current site, taken from a 1079×799 screenshot. It looks soft on big screens, so **ask for the original high-resolution file** and replace both files with the same names.
 - **Logo:** `assets/logo/pinklady-logo-transparent.png` was auto-cut and also removed the white silhouette. For dark backgrounds I made `site/assets/img/logo-light.*` (white silhouette + ivory tagline). Edges are acceptable, but **ask for the vector/original logo file** for crisp results.
 - **OG / social share image:** `site/assets/img/og-image.jpg` is just the logo on ivory. Replace it with a 1200×630 hero photo carrying the logo.
 - I couldn't preview the Unsplash IDs from my build environment (no access), so check each one loads. Any that don't just show the placeholder panel.
